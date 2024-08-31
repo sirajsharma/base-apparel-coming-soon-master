@@ -1,0 +1,182 @@
+@use "./breakpoints" as *;
+@use "./colors" as *;
+@use "./mixins" as *;
+@use "./resets" as *;
+@use "./typography" as *;
+
+:root {
+  font-size: $fs-regular;
+}
+
+.hero {
+  min-height: 100vh;
+  display: grid;
+  background: $cream-gradient;
+  background: -moz-#{$cream-gradient};
+  background: -webkit-#{$cream-gradient};
+
+  // Mobile grid settings
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, min-content);
+  grid-template-areas:
+    "heroHeader"
+    "heroPicture"
+    "heroArticle";
+
+  @include break-point($desktop) {
+    grid-template-columns: 1fr auto;
+    grid-template-rows: repeat(2, min-content);
+    grid-template-areas:
+      "heroHeader heroPicture"
+      "heroArticle heroPicture";
+  }
+
+  &__header {
+    grid-area: heroHeader;
+    padding: 2em;
+
+    @include break-point($desktop) {
+      padding-left: 10em;
+    }
+  }
+
+  &__logo {
+    width: 6.25em;
+
+    @include break-point($desktop) {
+      width: 9.8em;
+    }
+  }
+
+  &__article {
+    grid-area: heroArticle;
+    text-align: center;
+    padding: 2em;
+
+    @include break-point($desktop) {
+      padding-inline-start: 10em;
+      padding-inline-end: 14em;
+      text-align: left;
+
+      background: url(../../images/bg-pattern-desktop.svg);
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+    }
+  }
+
+  &__heading {
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    margin-block: 0.5em;
+
+    @include josefin-sans;
+
+    &--highlight {
+      font-weight: $fw-light;
+      color: $desaturated-red;
+    }
+
+    @include break-point($desktop) {
+      width: 25%;
+      font-size: 4.5rem;
+    }
+  }
+
+  &__desc {
+    @include josefin-sans;
+    color: $desaturated-red;
+  }
+
+  &__label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }
+
+  &__input-wrapper {
+    position: relative;
+    margin-top: 2em;
+  }
+
+  &__email {
+    width: 100%;
+
+    border-radius: 1.5em;
+    border: 1px solid $accent-soft-red;
+
+    padding-block: 0.9em;
+    padding-inline-end: 3.75em;
+    padding-inline-start: 1.5em;
+
+    @include josefin-sans;
+
+    &--error {
+      border: 1px solid $soft-red;
+    }
+  }
+
+  &__alert-icon {
+    position: absolute;
+    top: 0;
+    right: 4.5em;
+    transform: translateY(50%);
+    display: none;
+
+    @include break-point($desktop) {
+      right: 5em;
+    }
+  }
+
+  &__btn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    padding-block: 0.9em;
+    padding-inline: 1.5em;
+    border-radius: 1.5em;
+    border: none;
+    background-color: $desaturated-red;
+    background: $peach-gradient;
+    transition: box-shadow 500ms;
+
+    &:hover,
+    &:active,
+    &:focus {
+      box-shadow: 0px 3px 7px 2px $desaturated-red;
+      cursor: pointer;
+      opacity: 0.5;
+    }
+
+    @include break-point($desktop) {
+      padding-inline: 2em;
+    }
+  }
+
+  &__error {
+    display: block;
+    visibility: hidden;
+    text-align: left;
+    color: $soft-red;
+    margin-top: 0.5em;
+    padding-inline-start: 1.5em;
+    @include josefin-sans;
+  }
+
+  &__picture {
+    grid-area: heroPicture;
+  }
+
+  &__img {
+    width: 100%;
+    @include break-point($desktop) {
+      min-height: 100vh;
+      max-height: 100vh;
+    }
+  }
+}

@@ -23,58 +23,60 @@
 
     <link rel="stylesheet" href="./styles/build/main.css" />
   </head>
-  <body class="hero">
-    <header class="hero__header">
-      <img class="hero__logo" src="./images/logo.svg" alt="" />
-    </header>
-    <article class="hero__article">
-      <h1 class="hero__heading">
-        <span class="hero__heading--highlight">We&apos;re</span><br />coming
-        soon
-      </h1>
-      <p class="hero__desc">
-        Hello fellow shoppers! We're currently building our new fashion store.
-        Add your email below to stay up-to-date with announcements and our
-        launch deals.
-      </p>
-      <label class="hero__label" for="email">Email Address</label>
-      <div class="hero__input-wrapper">
-        <input
-          aria-describedby="email-error"
-          class="hero__email"
-          id="email"
-          name="email"
-          placeholder="Email Address"
-          type="email"
-        />
-        <img
-          class="hero__alert-icon"
-          id="email-error-icon"
-          src="./images/icon-error.svg"
-          alt="Alert Icon"
-        />
-        <button
-          aria-label="Submit email"
-          class="hero__btn"
-          id="submit-email-btn"
-          type="button"
+  <body>
+    <main class="hero">
+      <header class="hero__header">
+        <img class="hero__logo" src="./images/logo.svg" alt="" />
+      </header>
+      <article class="hero__article">
+        <h1 class="hero__heading">
+          <span class="hero__heading--highlight">We&apos;re</span><br />coming
+          soon
+        </h1>
+        <p class="hero__desc">
+          Hello fellow shoppers! We're currently building our new fashion store.
+          Add your email below to stay up-to-date with announcements and our
+          launch deals.
+        </p>
+        <label class="hero__label" for="email">Email Address</label>
+        <div class="hero__input-wrapper">
+          <input
+            aria-describedby="email-error"
+            class="hero__email"
+            id="email"
+            name="email"
+            placeholder="Email Address"
+            type="email"
+          />
+          <img
+            class="hero__alert-icon"
+            id="email-error-icon"
+            src="./images/icon-error.svg"
+            alt="Alert Icon"
+          />
+          <button
+            aria-label="Submit email"
+            class="hero__btn"
+            id="submit-email-btn"
+            type="button"
+          >
+            <img class="hero__btn-icon" src="./images/icon-arrow.svg" alt="" />
+          </button>
+        </div>
+        <span class="hero__error" id="email-error" role="alert"
+          >Please provide a valid email</span
         >
-          <img class="hero__btn-icon" src="./images/icon-arrow.svg" alt="" />
-        </button>
-      </div>
-      <span class="hero__error" id="email-error" role="alert"
-        >Please provide a valid email</span
-      >
-    </article>
-    <picture class="hero__picture">
-      <source media="(max-width: 375px)" srcset="./images/hero-mobile.jpg" />
-      <source media="(min-width: 376px)" srcset="./images/hero-desktop.jpg" />
-      <img
-        class="hero__img"
-        src="./images/hero-desktop.jpg"
-        alt="Girl with orange shirt"
-      />
-    </picture>
+      </article>
+      <picture class="hero__picture">
+        <source media="(max-width: 375px)" srcset="./images/hero-mobile.jpg" />
+        <source media="(min-width: 376px)" srcset="./images/hero-desktop.jpg" />
+        <img
+          class="hero__img"
+          src="./images/hero-desktop.jpg"
+          alt="Girl with orange shirt"
+        />
+      </picture>
+    </main>
 
     <script src="main.js"></script>
   </body>

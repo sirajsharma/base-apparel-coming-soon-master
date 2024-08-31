@@ -1,0 +1,12 @@
+@mixin break-point($breakpoint) {
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin josefin-sans($weight: 400, $fs: normal) {
+  font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: $weight;
+  font-style: $fs;
+}
